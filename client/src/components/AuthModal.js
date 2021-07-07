@@ -3,9 +3,11 @@ import { useHttp } from "../hooks/http.hook";
 import { useMessage } from "../hooks/message.hook";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "react-modal";
+import { useHistory } from "react-router-dom";
 
 export const AuthModal = () => {
   const auth = useContext(AuthContext);
+  const history = useHistory();
   const message = useMessage();
   const [modalIsOpen, setModalisOpen] = useState(false);
   const { loading, request, error, clearError } = useHttp();
@@ -28,6 +30,7 @@ export const AuthModal = () => {
       const data = await request("/api/auth/register", "POST", { ...form });
       message(data.message);
       setModalisOpen(false);
+      window.location.reload();
     } catch (e) {}
   };
 
@@ -36,7 +39,15 @@ export const AuthModal = () => {
       const data = await request("/api/auth/login", "POST", { ...form });
       auth.login(data.token, data.userId);
       setModalisOpen(false);
+      window.location.reload();
     } catch (e) {}
+  };
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    auth.logout();
+    history.push("/");
+    window.location.reload();
   };
 
   return (
@@ -46,7 +57,7 @@ export const AuthModal = () => {
         style={{ marginRight: "25px" }}
         onClick={() => setModalisOpen(true)}
       >
-        <i className="material-icons left">input</i>Sign up
+        <i className="material-icons left">input</i>SIGN UP
       </a>
 
       <Modal
@@ -131,6 +142,13 @@ export const AuthModal = () => {
           </div>
         </div>
       </Modal>
+      <a
+        className="blue darken-4 btn-small "
+        style={{ marginRight: "25px" }}
+        onClick={logoutHandler}
+      >
+        <i className="material-icons left">input</i>LOG OUT
+      </a>
     </div>
   );
 };

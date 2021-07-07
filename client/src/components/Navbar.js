@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { AuthModal } from "../components/AuthModal";
 import { useAuth } from "../hooks/auth.hook";
-// import { NavBtn } from "./NavBtn";
 
 export const Navbar = () => {
   const { token } = useAuth();
   const isAuthenticated = !!token;
+
   return (
     <nav>
       <div className="nav-wrapper cyan darken-1" style={{ padding: "0 2rem" }}>
