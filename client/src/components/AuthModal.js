@@ -151,7 +151,7 @@ export const AuthModal = () => {
         style={{ marginRight: "25px" }}
         onClick={logoutHandler}
       >
-        <i className="material-icons left">input</i>LOG OUT
+        <i className="material-icons left">power_settings_new</i>LOG OUT
       </a>
     </div>
   );
