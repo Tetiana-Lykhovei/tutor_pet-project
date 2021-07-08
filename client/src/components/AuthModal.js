@@ -4,13 +4,12 @@ import { useMessage } from "../hooks/message.hook";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "react-modal";
 import { useHistory } from "react-router-dom";
-import { NotificationsNone } from "@material-ui/icons";
 
 export const AuthModal = () => {
   const auth = useContext(AuthContext);
   const history = useHistory();
   const message = useMessage();
-  // const notice = useMessage();
+
   const [modalIsOpen, setModalisOpen] = useState(false);
   const { loading, request, error, clearError } = useHttp();
   const [form, setForm] = useState({
@@ -75,10 +74,9 @@ export const AuthModal = () => {
           },
           content: {
             position: "absolute",
-            width: "60%",
+            width: "50%",
             top: "120px",
-            left: "400px",
-            right: "400px",
+            left: "450px",
             bottom: "200px",
             border: "1px solid #ccc",
             background: "#fff",
