@@ -17,3 +17,9 @@ input.modal-input:focus {
   border-bottom: 1px solid #fff !important;
   box-shadow: 0 1px 0 0 #fff !important;
 }
+
+nav {
+  background-color: #00acc1;
+  border-style: none;
+  box-shadow: none;
+}

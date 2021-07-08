@@ -4,11 +4,13 @@ import { useMessage } from "../hooks/message.hook";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "react-modal";
 import { useHistory } from "react-router-dom";
+import { NotificationsNone } from "@material-ui/icons";
 
 export const AuthModal = () => {
   const auth = useContext(AuthContext);
   const history = useHistory();
   const message = useMessage();
+  // const notice = useMessage();
   const [modalIsOpen, setModalisOpen] = useState(false);
   const { loading, request, error, clearError } = useHttp();
   const [form, setForm] = useState({
@@ -29,8 +31,9 @@ export const AuthModal = () => {
     try {
       const data = await request("/api/auth/register", "POST", { ...form });
       message(data.message);
-      setModalisOpen(false);
-      window.location.reload();
+      setTimeout(function () {
+        message("Please push LOG IN button");
+      }, 1000);
     } catch (e) {}
   };
 
@@ -39,7 +42,10 @@ export const AuthModal = () => {
       const data = await request("/api/auth/login", "POST", { ...form });
       auth.login(data.token, data.userId);
       setModalisOpen(false);
-      window.location.reload();
+      setTimeout(function () {
+        message("You are logged in");
+        window.location.reload();
+      }, 1000);
     } catch (e) {}
   };
 
