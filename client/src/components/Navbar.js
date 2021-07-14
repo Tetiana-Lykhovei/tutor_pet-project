@@ -6,13 +6,12 @@ import { SearchBar } from "./SearchBar";
 import Logo from "../helpers/images/logo.png";
 
 export const Navbar = () => {
-  const { token } = useAuth();
-  const isAuthenticated = !!token;
+  const { userId } = useAuth();
 
   return (
     <nav>
       <div className="nav-wrapper cyan darken-1" style={{ padding: "0 2rem" }}>
-        <NavLink to="/">
+        <NavLink to="/" exact>
           <img
             src={Logo}
             style={{
@@ -21,7 +20,12 @@ export const Navbar = () => {
               paddingLeft: "20px",
             }}
           />
-          <NavLink to="/" className="brand-logo" style={{ marginLeft: "25px" }}>
+          <NavLink
+            to="/"
+            exact
+            className="brand-logo"
+            style={{ marginLeft: "25px" }}
+          >
             TUTORS
           </NavLink>
         </NavLink>
@@ -31,20 +35,50 @@ export const Navbar = () => {
             <SearchBar />
           </li>
           <li>
-            <NavLink to="/">About Us</NavLink>
+            <NavLink to="/" exact activeStyle={{ backgroundColor: "#00838f " }}>
+              About Us
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/services">Services</NavLink>
+            <NavLink
+              to="/services"
+              exact
+              activeStyle={{ backgroundColor: "#00838f " }}
+            >
+              Services
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/ourteam">Our Team</NavLink>
+            <NavLink
+              to="/ourteam"
+              exact
+              activeStyle={{ backgroundColor: "#00838f " }}
+            >
+              Our Team
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contacts">Contacts</NavLink>
+            <NavLink
+              to="/contacts"
+              exact
+              activeStyle={{ backgroundColor: "#00838f " }}
+            >
+              Contacts
+            </NavLink>
           </li>
-          <li style={{ display: isAuthenticated ? "block" : "none" }}>
-            <NavLink to="/cabinet">My cabinet</NavLink>
-          </li>
+          {userId && (
+            <li
+            // style={{ display: userId ? "block" : "none" }}
+            >
+              <NavLink
+                to="/cabinet"
+                exact
+                activeStyle={{ backgroundColor: "#00838f " }}
+              >
+                My cabinet
+              </NavLink>
+            </li>
+          )}
           <li>
             <AuthModal />
           </li>

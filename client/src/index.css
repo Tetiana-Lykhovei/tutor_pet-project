@@ -18,8 +18,15 @@ input.modal-input:focus {
   box-shadow: 0 1px 0 0 #fff !important;
 }
 
-nav {
+nav,
+.page-footer {
   background-color: #00acc1;
   border-style: none;
   box-shadow: none;
+}
+
+svg:hover {
+  padding: 7px;
+  border-radius: 30%;
+  background-color: #00838f;
 }

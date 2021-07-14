@@ -44,7 +44,7 @@ export const AuthModal = () => {
       setTimeout(function () {
         message("You are logged in");
         window.location.reload();
-      }, 1000);
+      }, 1500);
     } catch (e) {}
   };
 

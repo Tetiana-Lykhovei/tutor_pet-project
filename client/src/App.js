@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import { useRoutes } from "./routes";
 import { useAuth } from "./hooks/auth.hook";
 import { AuthContext } from "./context/AuthContext";
+import { Footer } from "./components/Footer/Footer";
 
 import Modal from "react-modal";
 import "materialize-css";
@@ -26,8 +27,8 @@ function App() {
     >
       <Router>
         <Navbar />
-
         <div className="container">{routes}</div>
+        <Footer />
       </Router>
     </AuthContext.Provider>
   );
