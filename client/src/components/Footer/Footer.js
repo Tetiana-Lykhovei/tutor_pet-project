@@ -1,5 +1,5 @@
 import React from "react";
-import Media from "../Footer/LogoMedia";
+import Media from "../Footer/LogoSocialMedia";
 import Pages from "../Footer/Pages";
 import EmailSubmit from "./emailSubmit";
 
