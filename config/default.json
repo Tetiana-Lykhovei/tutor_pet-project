@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "magic",
+    "mongoURI":"mongodb+srv://Litava:753951@cluster0.vlhaq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+}
