@@ -1,5 +1,11 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
+body {
+  background-image: url(./helpers/images/Vector_contacts.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 input.modal-input {
   border-bottom: 1px solid #fff !important;
   box-shadow: 0 1px 0 0 #fff !important;
@@ -50,4 +56,11 @@ a.twitter {
 a.instagram {
   color: rgba(128, 0, 128, 0.541);
   padding-right: 0px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
