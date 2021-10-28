@@ -1,5 +1,12 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   background-image: url(./helpers/images/Vector_contacts.png);
   background-repeat: no-repeat;
@@ -63,4 +70,363 @@ h1 {
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.waves-effect {
+  z-index: 0;
+}
+
+.main {
+  display: flex;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+}
+
+.aboutUsh1 {
+  margin-top: 170px;
+  font-weight: 600;
+}
+
+.aboutUsh2 {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  margin-top: 70px;
+}
+
+.aboutUsp {
+  font-size: 18px;
+  margin: 0;
+}
+
+.aboutUsImg {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  transform: translate(55px, 55px);
+  border-radius: 50%;
+}
+
+.servicesImg {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  transform: translate(55px, 55px);
+  border-radius: 50%;
+}
+
+.teamImg {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  transform: translate(55px, 40px);
+  border-radius: 50%;
+}
+
+.aboutUsUl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding: 20px;
+}
+
+.experience {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 20px;
+  background-color: #ffd180;
+  border-radius: 20px;
+  width: 1200px;
+}
+
+.peopleSay {
+  display: flex;
+  margin-left: auto;
+  padding: 20px;
+  width: 1200px;
+}
+
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 25px;
+  width: 600px;
+}
+
+.aboutUsForm {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+  width: 1200px;
+}
+
+.formSubject {
+  color: gray;
+  font-size: 16px;
+}
+
+.formCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.methodologyLi {
+  margin-right: 50px;
+  width: 200px;
+  padding: 10px;
+}
+
+.signUp {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 20px;
+  background-color: #5ddfb3;
+  border-radius: 20px;
+  width: 1200px;
+  justify-content: space-around;
+  height: 180px;
+  margin-bottom: 50px;
+}
+
+.signUph3 {
+  display: flex;
+  justify-content: center;
+  width: 458px;
+  height: 54px;
+  left: 0px;
+  top: 0px;
+}
+
+#tel,
+#mail,
+#name {
+  background-color: white !important;
+  border-radius: 20px !important;
+  width: 200px;
+}
+.row .col.s6 {
+  width: auto !important;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.signUplabel {
+  padding-left: 15px;
+}
+
+.servicesP {
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+.servicesUl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicesLessons {
+  display: flex;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.approach.servicesLessons {
+  outline: 2px solid orange;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.servicesp {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.servicesQuestions {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1100px;
+  background: #5ddfb3;
+  opacity: 0.5;
+  border-radius: 40px;
+}
+
+.servicesQuestionsUl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+.servicesQuestionsLi {
+  margin: 15px;
+  padding: 12px;
+  width: 490px;
+  height: 190px;
+  background: #ecf2fe;
+  border-radius: 8px;
+}
+
+.servicesQuestionsh6 {
+  width: 425px;
+  height: 32px;
+  left: 207px;
+  top: 332px;
+  color: black;
+}
+
+.servicesQuestionsp {
+  font-size: 16px;
+  color: black;
+}
+
+.servicesForm {
+  display: flex;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.servicesFormp {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.servicesApproaches {
+  width: 250px;
+  height: 230px;
+}
+.filterBtns {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 5px;
+}
+
+.filterButton {
+  width: 200px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.teamP {
+  width: 350px;
+  font-size: 16px;
+}
+
+.teamCallBtn {
+  margin-top: 20px;
+  padding: 7px 10px;
+  background: #fff;
+  border: 1px solid #56ccf2;
+  box-shadow: 0px 2px 4px rgba(38, 50, 56, 0.08),
+    0px 4px 6px rgba(38, 50, 56, 0.08);
+  border-radius: 50px;
+}
+
+.tutorBtns {
+  color: black;
+  font-size: 12px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.programs {
+  background-color: #ffd0808a;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.programs:hover {
+  zoom: 102%;
+}
+
+.programsH4 {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.programsp {
+  margin-left: 20px;
+}
+
+.programBtn {
+  margin: 20px;
+  margin-left: 170px;
+}
+
+.interested {
+  margin: 20px;
+  padding: 20px;
+  padding-left: 20px !important;
+  margin-bottom: 70px;
+  line-height: 2;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactsAddress {
+  width: 370px;
+  line-height: 200%;
+  font-size: 18px;
+  font-style: normal;
+}
+
+.contactsMap {
+  width: 75%;
+  height: 520px;
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.adressCard {
+  background-color: #ffd08065;
+  margin-top: 10px;
+  padding: 10px;
+
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.contactDetails {
+  display: flex;
+  align-items: center;
+}
+
+.contactsh5 {
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #087d8d;
 }
