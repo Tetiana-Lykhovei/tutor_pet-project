@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { lessons } from "../../../moked/Services";
+import Modal from "../../../components/Modal";
+import RequestLessonModal from "../../requestModal";
 
 const Lessons = () => {
+  const [active, setActive] = useState(false);
   return (
     <div>
       <h3 className="aboutUsh2">LESSONS WE CONDUCT</h3>
@@ -13,7 +16,10 @@ const Lessons = () => {
               <div style={{ width: "400px", textAlign: "center" }}>
                 <h4>{l.title} </h4>
                 <p style={{ marginBottom: "30px" }}>{l.text}</p>
-                <button class="waves-effect waves-light btn">
+                <button
+                  class="waves-effect waves-light btn"
+                  onClick={() => setActive(true)}
+                >
                   <i class="material-icons right">arrow_forward</i>Have a lesson
                 </button>
               </div>
@@ -21,6 +27,9 @@ const Lessons = () => {
           );
         })}
       </ul>
+      <Modal active={active} setActive={setActive}>
+        <RequestLessonModal />
+      </Modal>
     </div>
   );
 };

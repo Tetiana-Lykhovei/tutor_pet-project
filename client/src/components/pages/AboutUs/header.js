@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import mainpage from "../../../helpers/images/mainpage.jpg";
+import Modal from "../../../components/Modal";
+import RequestLessonModal from "../../requestModal";
 
 const AboutUsHeader = () => {
+  const [active, setActive] = useState(false);
   return (
     <div className="main">
       <div>
@@ -13,6 +16,7 @@ const AboutUsHeader = () => {
           className="btn waves-effect waves-light "
           style={{ marginTop: "20px" }}
           name="action"
+          onClick={() => setActive(true)}
         >
           Try for free
           <i className="material-icons right large">navigate_next</i>
@@ -21,6 +25,9 @@ const AboutUsHeader = () => {
       <div>
         <img className="aboutUsImg" src={mainpage} />
       </div>
+      <Modal active={active} setActive={setActive}>
+        <RequestLessonModal />
+      </Modal>
     </div>
   );
 };

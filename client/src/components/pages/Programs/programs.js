@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { programs } from "../../../moked/Team";
+import Modal from "../../../components/Modal";
+import RequestLessonModal from "../../requestModal";
 
 const Programs = () => {
+  const [active, setActive] = useState(false);
   return (
     <div>
       <h3 className="aboutUsh2">EDUCATIONAL PROGRAMS</h3>
@@ -12,7 +15,10 @@ const Programs = () => {
               <img src={p.image} width="350px" height="270px" />
               <h5 className="programsH4">{p.title}</h5>
               <p className="programsp">{p.text}</p>
-              <button class="waves-effect  teal darken-2 btn programBtn">
+              <button
+                class="waves-effect  teal darken-2 btn programBtn"
+                onClick={() => setActive(true)}
+              >
                 <i class="material-icons  teal darken-2 right">navigate_next</i>
                 Learn more
               </button>
@@ -20,6 +26,9 @@ const Programs = () => {
           );
         })}
       </ul>
+      <Modal active={active} setActive={setActive}>
+        <RequestLessonModal />
+      </Modal>
     </div>
   );
 };
