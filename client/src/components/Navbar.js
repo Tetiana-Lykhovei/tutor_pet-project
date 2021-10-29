@@ -50,11 +50,11 @@ export const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/ourteam"
+              to="/study"
               exact
               activeStyle={{ backgroundColor: "#00838f " }}
             >
-              Our Team
+              Programs
             </NavLink>
           </li>
           <li>

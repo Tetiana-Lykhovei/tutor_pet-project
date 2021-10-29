@@ -4,7 +4,7 @@ import { methodology } from "../../../moked/AboutUs";
 const Methodology = () => {
   return (
     <div>
-      <h2 className="aboutUsh2">Our methodology</h2>
+      <h3 className="aboutUsh2">Methodology we use</h3>
       <ul className="aboutUsUl">
         {methodology.map((m) => {
           return (

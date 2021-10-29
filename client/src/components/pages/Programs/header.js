@@ -2,7 +2,7 @@ import React from "react";
 import team from "../../../helpers/images/team.jpg";
 import { filterskills } from "../../../moked/Team";
 
-const TeamHeader = () => {
+const ProgramsHeader = () => {
   return (
     <div>
       <div className="main">
@@ -18,17 +18,22 @@ const TeamHeader = () => {
       </div>
 
       <h3 className="aboutUsh2 ">CATEGORIES</h3>
-      <div className="filterBtns">
+      <ul className="servicesUl">
         {filterskills.map((b) => {
           return (
-            <a class="teal btn-large filterButton">
-              <i class="material-icons right">{b.icon}</i>
-              {b.title}
-            </a>
+            <li className="categories">
+              <img src={b.icon} width="200px" height="150px" />
+              <h6 className="programsH4">{b.title}</h6>
+              <p className="programsp">{b.text}</p>
+              <button class="waves-effect  teal darken-2 btn categoryBtn">
+                <i class="material-icons  teal darken-2 right">navigate_next</i>
+                Learn more
+              </button>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
-export default TeamHeader;
+export default ProgramsHeader;

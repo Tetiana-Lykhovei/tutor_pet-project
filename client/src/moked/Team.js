@@ -7,27 +7,37 @@ import guitarr from "../helpers/images/guitarr.jpg";
 import marketing from "../helpers/images/marketing.jpg";
 import sociaty from "../helpers/images/sociaty.jpg";
 import painting from "../helpers/images/painting.jpg";
+import lang from "../helpers/images/languages.jpg";
+import socio from "../helpers/images/socio.jpg";
+import market from "../helpers/images/market.jpg";
+import paint from "../helpers/images/paint.jpg";
+import playGuitar from "../helpers/images/guitarPlay.jpg";
 
 export const filterskills = [
   {
-    icon: "speaker_notes",
+    icon: lang,
     title: "Languages",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
   },
   {
-    icon: "group",
+    icon: socio,
     title: "Sociology",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
   },
   {
-    icon: "leak_add",
+    icon: market,
     title: "Marketing",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
   },
   {
-    icon: "palette",
+    icon: paint,
     title: "Painting",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
   },
   {
-    icon: "music_notes",
-    title: "Guitar",
+    icon: playGuitar,
+    title: "Guitar playing",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
   },
 ];
 
@@ -141,7 +151,7 @@ export const programs = [
   },
   {
     image: painting,
-    title: "Painting from skretch",
+    title: "Painting from scretch",
     text: "The journey begins with the very first step.",
   },
   {
