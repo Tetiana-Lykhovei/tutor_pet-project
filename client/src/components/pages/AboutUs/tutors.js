@@ -1,9 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { tutors } from "../../../moked/Team";
 import Modal from "../../../components/Modal";
 
+const formReducer = (state, event) => {
+  if (event.reset) {
+    return {
+      Name: "",
+      Email: "",
+      Tel: "",
+    };
+  }
+  return {
+    ...state,
+    [event.name]: event.value,
+  };
+};
+
 const Tutors = () => {
+  const [CallformData, setCallFormData] = useReducer(formReducer, {});
+  const [submitting, setSubmitting] = useState(false);
   const [active, setActive] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      setCallFormData({
+        reset: true,
+      });
+    }, 4000);
+  };
+
+  const handleChange = (event) => {
+    setCallFormData({
+      name: event.target.name,
+      value: event.target.value,
+    });
+  };
+
   return (
     <div>
       <h3 className="aboutUsh2">OUR TUTORS</h3>
@@ -14,7 +49,7 @@ const Tutors = () => {
               className="servicesLessons "
               style={{ justifyContent: "center" }}
             >
-              <img src={t.image} width="230px" height="270px" />
+              <img src={t.image} width="230px" height="270px" alt="pic" />
               <div style={{ width: "400px" }}>
                 <h4>{t.name}</h4>
 
@@ -40,29 +75,60 @@ const Tutors = () => {
       </ul>
       <Modal active={active} setActive={setActive}>
         <h5 className="feedbackModalh5">Call the tutor</h5>
-        <div>
-          <div class="input-field col s12">
-            <input id="first_name" type="text" />
-            <label for="first_name">Your Name</label>
+        {submitting && (
+          <div className="notifySubmit">
+            You are submitting:
+            <ul>
+              {Object.entries(CallformData).map(([name, value]) => (
+                <li key={name}>
+                  <strong>{name}</strong>: {value.toString()}
+                </li>
+              ))}
+            </ul>
           </div>
+        )}
 
-          <div class="input-field col s12">
-            <input id="email" type="email" />
+        <form onSubmit={handleSubmit}>
+          <div class="input-field col s12" disabled={submitting}>
+            <input
+              name="Name"
+              id="first_name"
+              type="text"
+              onChange={handleChange}
+              value={CallformData.Name || ""}
+            />
+            <label for="first_name"> Name</label>
+          </div>
+          <div class="input-field col s12" disabled={submitting}>
+            <input
+              name="Email"
+              id="email"
+              type="email"
+              onChange={handleChange}
+              value={CallformData.Email || ""}
+            />
             <label for="email">Email</label>
           </div>
-          <div class="input-field col s12">
-            <input id="telef" type="text" />
+          <div class="input-field col s12" disabled={submitting}>
+            <input
+              name="Tel"
+              id="telef"
+              type="text"
+              onChange={handleChange}
+              value={CallformData.Tel || ""}
+            />
             <label for="telef">+38</label>
           </div>
-        </div>
-        <button
-          className="btn waves-effect waves-light blue  right"
-          type="submit"
-          name="action"
-        >
-          Order call
-          <i className="material-icons right">send</i>
-        </button>
+          <button
+            className="btn waves-effect waves-light blue  right"
+            type="submit"
+            name="action"
+            disabled={submitting}
+          >
+            Order call
+            <i className="material-icons right">send</i>
+          </button>
+        </form>
       </Modal>
     </div>
   );

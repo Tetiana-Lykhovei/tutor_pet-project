@@ -55,6 +55,7 @@ export const ContactsPage = () => {
 
         <iframe
           className="contactsMap"
+          title="location"
           loading="lazy"
           allowFullScreen
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDW6YFq7KOO4NQe55ku-v9dsMTGWKPhTuU

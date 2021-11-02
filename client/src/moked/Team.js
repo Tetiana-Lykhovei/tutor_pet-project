@@ -1,4 +1,3 @@
-import React from "react";
 import tutor1 from "../helpers/images/tutor1.jpg";
 import tutor2 from "../helpers/images/tutor2.jpg";
 import speaking from "../helpers/images/speaking.jpg";

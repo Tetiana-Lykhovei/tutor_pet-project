@@ -9,11 +9,11 @@ const ScrollToTop = () => {
   };
   return (
     <button
-      className="waves-effect  orange darken-1 btn scrollBtn"
+      className="waves-effect  orange  darken-1 btn scrollBtn"
       onClick={ScrollTop}
     >
       <p style={{ fontSize: "16px" }}>UP</p>
-      <i className="material-icons orange darken-1 large">arrow_upward</i>
+      <i className="material-icons orange darken-1 large ">arrow_upward</i>
     </button>
   );
 };

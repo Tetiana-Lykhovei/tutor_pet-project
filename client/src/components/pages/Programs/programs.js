@@ -12,7 +12,7 @@ const Programs = () => {
         {programs.map((p) => {
           return (
             <li className="programs">
-              <img src={p.image} width="350px" height="270px" />
+              <img src={p.image} width="350px" height="270px" alt="pic" />
               <h5 className="programsH4">{p.title}</h5>
               <p className="programsp">{p.text}</p>
               <button

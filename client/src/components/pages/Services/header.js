@@ -13,7 +13,7 @@ const ServicesHeader = () => {
         </p>
       </div>
 
-      <img className="servicesImg" src={teach} />
+      <img className="servicesImg" src={teach} alt="pic" />
     </div>
   );
 };

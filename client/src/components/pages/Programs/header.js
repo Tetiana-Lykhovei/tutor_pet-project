@@ -17,7 +17,7 @@ const ProgramsHeader = () => {
             suscipit eaque.
           </p>
         </div>
-        <img className="teamImg" src={team} />
+        <img className="teamImg" src={team} alt="pic" />
       </div>
 
       <h3 className="aboutUsh2 ">CATEGORIES</h3>
@@ -25,7 +25,7 @@ const ProgramsHeader = () => {
         {filterskills.map((b) => {
           return (
             <li className="categories">
-              <img src={b.icon} width="200px" height="150px" />
+              <img src={b.icon} width="200px" height="150px" alt="pic" />
               <h6 className="programsH4">{b.title}</h6>
               <p className="programsp">{b.text}</p>
               <button

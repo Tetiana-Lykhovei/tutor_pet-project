@@ -1,4 +1,3 @@
-import React from "react";
 import lang from "../helpers/images/lang.png";
 import guitar from "../helpers/images/guitar.png";
 import learning from "../helpers/images/learning.jpg";

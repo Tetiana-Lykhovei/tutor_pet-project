@@ -1,10 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import people from "../../../helpers/images/people.png";
 import { comments } from "../../../moked/AboutUs";
 import Modal from "../../../components/Modal";
 
+const formReducer = (state, event) => {
+  if (event.reset) {
+    return {
+      Name: "",
+      Surname: "",
+      Email: "",
+      Feedback: "",
+    };
+  }
+  return {
+    ...state,
+    [event.name]: event.value,
+  };
+};
+
 const Comments = () => {
+  const [feedbackFormData, setFeedbackFormData] = useReducer(formReducer, {});
+  const [submitting, setSubmitting] = useState(false);
   const [active, setActive] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      setFeedbackFormData({
+        reset: true,
+      });
+      window.location.reload();
+    }, 7000);
+  };
+
+  const handleChange = (event) => {
+    setFeedbackFormData({
+      name: event.target.name,
+      value: event.target.value,
+    });
+  };
+
   return (
     <div>
       <div className="peopleSay">
@@ -39,34 +76,77 @@ const Comments = () => {
         <i className="material-icons blue right large">create</i>
       </button>
       <Modal active={active} setActive={setActive}>
-        <h5 className="feedbackModalh5">Please, leave your feedback</h5>
-
-        <div>
-          <div class="input-field col s12">
-            <input id="first_name" type="text" />
-            <label for="first_name">First Name</label>
+        {submitting ? (
+          <div className="notifySubmit feedback">
+            <h5 className="feedbackModalh5">YOU ARE SUBMITTING:</h5>
+            <ul>
+              {Object.entries(feedbackFormData).map(([name, value]) => (
+                <li key={name}>
+                  <strong className="notifySubmitStrong">{name}</strong>:{" "}
+                  {value.toString()}
+                </li>
+              ))}
+            </ul>
+            <h6 className="notifySubmitp thank">Thank you for your feedback</h6>
           </div>
-          <div class="input-field col s12">
-            <input id="last_name" type="text" />
-            <label for="last_name">Last Name</label>
-          </div>
-          <div class="input-field col s12">
-            <input id="email" type="email" />
-            <label for="email">Email</label>
-          </div>
-          <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1">Feedback</label>
-          </div>
-        </div>
-        <button
-          className="btn waves-effect waves-light blue right"
-          type="submit"
-          name="action"
-        >
-          Send
-          <i className="material-icons right">send</i>
-        </button>
+        ) : (
+          <>
+            <h5 className="feedbackModalh5">Please, leave your feedback</h5>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <div class="input-field col s12" disabled={submitting}>
+                  <input
+                    name="Name"
+                    id="first_name"
+                    type="text"
+                    onChange={handleChange}
+                    value={feedbackFormData.Name || ""}
+                  />
+                  <label for="first_name">Name</label>
+                </div>
+                <div className="input-field col s7" disabled={submitting}>
+                  <input
+                    name="Surname"
+                    id="surname"
+                    type="text"
+                    onChange={handleChange}
+                    value={feedbackFormData.Surname || ""}
+                  />
+                  <label for="surname">Surname</label>
+                </div>
+                <div class="input-field col s12" disabled={submitting}>
+                  <input
+                    name="Email"
+                    id="email"
+                    type="email"
+                    onChange={handleChange}
+                    value={feedbackFormData.Email || ""}
+                  />
+                  <label for="email">Email</label>
+                </div>
+                <div className="input-field col s12" disabled={submitting}>
+                  <textarea
+                    name="Message"
+                    id="textarea1"
+                    className="materialize-textarea"
+                    onChange={handleChange}
+                    value={feedbackFormData.Message || ""}
+                  ></textarea>
+                  <label for="textarea1">Feedback</label>
+                </div>
+              </div>
+              <button
+                className="btn waves-effect waves-light blue right"
+                type="submit"
+                name="action"
+                disabled={submitting}
+              >
+                Send
+                <i className="material-icons right">send</i>
+              </button>
+            </form>
+          </>
+        )}
       </Modal>
     </div>
   );

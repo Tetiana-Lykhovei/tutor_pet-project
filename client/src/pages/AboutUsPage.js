@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AboutUsHeader from "../components/pages/AboutUs/header";
 import Facts from "../components/pages/AboutUs/facts";
 import Experience from "../components/experience";

@@ -12,7 +12,7 @@ const Lessons = () => {
         {lessons.map((l) => {
           return (
             <li className="servicesLessons">
-              <img src={l.image} width="230px" height="230px" />
+              <img src={l.image} width="230px" height="230px" alt="pic" />
               <div style={{ width: "400px", textAlign: "center" }}>
                 <h4>{l.title} </h4>
                 <p style={{ marginBottom: "30px" }}>{l.text}</p>

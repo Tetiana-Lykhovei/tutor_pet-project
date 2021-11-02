@@ -9,15 +9,12 @@ const Facts = () => {
         {facts.map((fact) =>
           fact.image.map((i) => {
             return (
-              <li
-                style={{
-                  marginRight: "20px",
-                }}
-              >
-                <img src={i} width="300px" height="300px" />
+              <li className="aboutUsFactsLi">
+                <img src={i} width="200px" height="200px" />
                 <p
                   style={{
-                    width: "300px",
+                    width: "200px",
+                    padding: "10px",
                   }}
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.

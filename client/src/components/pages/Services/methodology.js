@@ -9,7 +9,7 @@ const Methodology = () => {
         {methodology.map((m) => {
           return (
             <li className="methodologyLi">
-              <img src={m.image} />
+              <img src={m.image} alt="pic" />
               <p>{m.text}</p>
             </li>
           );

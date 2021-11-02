@@ -1,8 +1,6 @@
-import React from "react";
 import pic1 from "../helpers/images/Illustration1.png";
 import pic2 from "../helpers/images/Illustration2.png";
 import pic3 from "../helpers/images/Illustration3.png";
-import pic4 from "../helpers/images/Illustration4.png";
 import pic5 from "../helpers/images/Illustration5.png";
 import pic6 from "../helpers/images/Illustration6.png";
 import abc from "../helpers/images/abc.png";
@@ -16,7 +14,7 @@ import interact from "../helpers/images/interact.png";
 
 export const facts = [
   {
-    image: [pic1, pic2, pic3, pic4, pic5, pic6],
+    image: [pic1, pic2, pic5, pic3, pic6],
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
