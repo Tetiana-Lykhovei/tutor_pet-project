@@ -30,7 +30,7 @@ export const ContactsPage = () => {
   ];
   return (
     <div>
-      <h1>Contacts</h1>
+      <h1 className="aboutUsh1 contactsTitle">Contacts</h1>
       <div className="contacts">
         <address className="contactsAddress">
           <ul>

@@ -5,7 +5,7 @@ import Programs from "../components/pages/Programs/programs";
 import InterestedIn from "../components/pages/Programs/interestedIn";
 import Form from "../components/FormToApply";
 
-export const StudyPage = () => {
+export const ProgramsPage = () => {
   return (
     <div>
       <ProgramsHeader />

@@ -4,7 +4,7 @@ import { AboutUsPage } from "./pages/AboutUsPage";
 import { CabinetPage } from "./pages/CabinetPage";
 import { ContactsPage } from "./pages/ContactsPage";
 import { ServicesPage } from "./pages/ServicesPage";
-import { StudyPage } from "./pages/StudyPage";
+import { ProgramsPage } from "./pages/ProgramsPage";
 
 export const useRoutes = (isAuthenticated) => {
   if (isAuthenticated) {
@@ -26,8 +26,8 @@ export const useRoutes = (isAuthenticated) => {
           <ServicesPage />
         </Route>
 
-        <Route path="/study" exact>
-          <StudyPage />
+        <Route path="/programs" exact>
+          <ProgramsPage />
         </Route>
         <Redirect to="/cabinet" />
       </Switch>
@@ -49,7 +49,7 @@ export const useRoutes = (isAuthenticated) => {
       </Route>
 
       <Route path="/study" exact>
-        <StudyPage />
+        <ProgramsPage />
       </Route>
 
       <Redirect to="/" />

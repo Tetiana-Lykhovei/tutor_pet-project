@@ -4,7 +4,7 @@ import { facts } from "../../../moked/AboutUs";
 const Facts = () => {
   return (
     <div>
-      <h2 className="aboutUsh2">Facts about us</h2>
+      <h3 className="aboutUsh2">Facts about us</h3>
       <ul className="aboutUsUl">
         {facts.map((fact) =>
           fact.image.map((i) => {

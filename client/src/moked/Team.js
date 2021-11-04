@@ -74,8 +74,8 @@ export const tutors = [
         title: "Painting",
       },
       {
-        icon: "music_notes",
-        title: "Guitar",
+        // icon: "music_notes",
+        title: "Guitar playing",
       },
     ],
   },

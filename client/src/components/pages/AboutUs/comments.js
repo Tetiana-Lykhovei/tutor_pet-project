@@ -45,8 +45,10 @@ const Comments = () => {
   return (
     <div>
       <div className="peopleSay">
-        <div style={{ width: "450px", marginRight: "20px" }}>
-          <h3>What people are saying About Us</h3>
+        <div style={{ width: "400px", marginRight: "20px" }}>
+          <h3 style={{ textTransform: "uppercase" }}>
+            What people are saying About Us
+          </h3>
           <img src={people} />
         </div>
 
